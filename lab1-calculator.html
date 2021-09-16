@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+        <title>Calculator</title>
+        <meta charset="utf-8">    
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">       
+  </head>
+  <body>
+      <label for="number1">First no.</label>&nbsp;&nbsp;&nbsp; 
+      <input type="text" id="number1" class="number1" name="number1"><br><br>
+	  <label for="number2">Second no.</label>
+      <input type="text" id="number2" class="number2" name="number2"><br><br>        
+      <select id="operators" class="operators" name="operators">
+         <option value="addition">+</option>
+         <option value="subtraction">-</option>
+         <option value="multiplication">&times;</option>
+         <option value="division">/</option>
+      </select>&nbsp;      
+      <button onclick="answer();">=</button>&nbsp;
+      <input type="text" id="result">         
+      <script>            
+            function answer()
+            {
+                var num1 = parseFloat(document.getElementById('number1').value);
+                var num2 = parseFloat(document.getElementById('number2').value);
+                
+                var operator = document.getElementById('operators').value;
+                
+                if(operator === 'addition')
+                {
+                    document.getElementById('result').value = num1+num2;
+                }
+                
+                if(operator === 'subtraction')
+                {
+                    document.getElementById('result').value = num1-num2;
+                }
+				
+                if(operator === 'multiplication')
+                {
+                    document.getElementById('result').value = num1*num2;
+                }
+				
+                if(operator === 'division')
+                {
+                    document.getElementById('result').value = num1/num2;
+                }               
+            }            
+      </script>        
+   </body>
+</html>
